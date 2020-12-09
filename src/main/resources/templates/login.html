@@ -7,14 +7,14 @@
 </head>
 <body>
     <!-- th:if is from thymeleaf dependency -->
-    <div th:if="$param.error">
+    <div th:if="${param.error}">
         Invalid username and password.
     </div>
     <!-- th:if is from thymeleaf dependency -->
     <div th:if="${param.logout}">
         You have logged out.
     </div>
-    <!-- th:action is from thymeleaf dependency -->
+    <!-- th:action is from thymeleaf dependency captures username and password "posts" them to /login -->
     <form th:action="@{/login}" method="post">
         <div><label>User Name: <input type="text" name="username"> </label></div>
         <div><label>Password: <input type="password" name="password"> </label></div>

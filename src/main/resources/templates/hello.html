@@ -6,6 +6,11 @@
     <title>Hello page</title>
 </head>
 <body>
-    <h1>Hello, Have a good day!</h1>
+    <!-- th:inline is from thymeleaf dependency takes in variable via httpServletRequest and replaces with text(for Username) -->
+    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+    <!-- th:action is from thymeleaf dependency allows to use POST method for signing out-->
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" valut ="Sign Out">
+    </form>
 </body>
 </html>
